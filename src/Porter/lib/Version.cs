@@ -7,7 +7,7 @@ namespace Porter
     {
         public void Work()
         {
-            string currentVersion = ResourceHelper.ReadResourceAsString(Assembly.GetExecutingAssembly(), "currentVersion.txt");
+            string currentVersion = ResourceHelper.ReadNamedResourceAsString(Assembly.GetCallingAssembly(), "Porter.currentVersion.txt");
             Console.WriteLine($"version : {currentVersion}");
         }
     }    
