@@ -48,7 +48,7 @@ if [ $BUILD -eq 1 ]; then
     cd ..
     
     # write hash + tag to currentVersion.txt in source, this will be displayed by web ui
-    echo "$HASH $TAG" > ./src/Porter/currentVersion.txt 
+    echo "$TAG ($HASH)" > ./src/Porter/currentVersion.txt 
 
     python3 porter.py --install ./src/Porter
     dotnet restore

@@ -24,7 +24,11 @@ namespace Porter
                 string command = null;
                 if (switches.Contains("install") || switches.Contains("i"))
                     command = "install";
+                
+                if (switches.Contains("version") || switches.Contains("v"))
+                    command = "version";
 
+                
                 if (command == null || switches.Contains("help") || switches.Contains("h"))
                 {
                     Console.WriteLine("Usage:");
@@ -46,6 +50,11 @@ namespace Porter
                     install.Work(installPath);
                 }
 
+                if (command == "version")
+                {
+                    Version version = new Version();
+                    version.Work();
+                }
             }
             catch (Exception ex)
             {
