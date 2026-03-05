@@ -133,7 +133,7 @@ namespace Porter
             List<PackageAddress> packages_to_install = new List<PackageAddress>();
             string package_name = porterPackage.name;
 
-            //context = context[:] # copy array so we don't end up cascading additions to adjacent recursive calls
+            context = context.GetRange(0, context.Count); // copy array so we don't end up cascading additions to adjacent recursive calls
             context.Add(package_name);
 
             // generate package to install from conf packages
